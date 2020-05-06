@@ -33,6 +33,7 @@ public  class Calcul extends Filter {
 	@Override
     protected synchronized void execute() {
 		// TODO Auto-generated method stub
+		while (true){
 		String operation = getData();
 		sendData(operation);
 		switch(operation){
@@ -60,6 +61,6 @@ public  class Calcul extends Filter {
 				break;
 		}
 
-	}
+	}}
 }
  

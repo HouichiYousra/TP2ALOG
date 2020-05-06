@@ -79,8 +79,6 @@ public class GuiController extends Filter implements Initializable {
             stage.close();
             Platform.exit();
             System.exit(0);
-
-
         });
 
         produitBtn.setOnAction(actionEvent -> {
