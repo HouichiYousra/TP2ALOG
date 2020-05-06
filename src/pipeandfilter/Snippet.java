@@ -1,5 +1,8 @@
 package pipeandfilter;
 
+import GUI.Gui;
+import GUI.GuiController;
+
 public class Snippet {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,6 +14,7 @@ public class Snippet {
 		 
 		 
 	Filter a1 = new FilterA(null,p1);
+
 	Filter b1 = new Calcul(p1,p2);
 	Filter c1 = new FilterC(p2,null);
 	 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GuiController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="298.0" prefWidth="371.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="369.0">
+               <children>
+                  <JFXButton fx:id="produitBtn" buttonType="RAISED" layoutX="147.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Produit" />
+                  <JFXButton fx:id="sommeBtn" buttonType="RAISED" layoutX="41.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Somme" />
+                  <JFXButton fx:id="factorielBtn" buttonType="RAISED" layoutX="252.0" layoutY="114.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Factoriel" />
+                  <JFXTextField fx:id="nb2" focusColor="#ff7c6c" labelFloat="true" layoutX="33.0" layoutY="61.0" prefHeight="33.0" prefWidth="127.0" promptText="Nombre 1" style="-jfx-unfocus-color: #FF7C6C;" unFocusColor="#ff7c6c">
+                     <font>
+                        <Font name="Calibri Light" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="nb1" focusColor="#ff7c6c" labelFloat="true" layoutX="193.0" layoutY="61.0" prefHeight="33.0" prefWidth="127.0" promptText="Nombre 1" style="-jfx-unfocus-color: #FF7C6C;" unFocusColor="#ff7c6c">
+                     <font>
+                        <Font name="Calibri Light" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="92.0" layoutY="14.0" prefHeight="33.0" prefWidth="186.0" text="Les formes et le Vues" textAlignment="CENTER" textFill="#d84e41">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Label>
+               </children></AnchorPane>
+          <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="369.0">
+               <children>
+                  <Label layoutX="141.0" prefHeight="33.0" prefWidth="87.0" text="Résultats" textAlignment="CENTER" textFill="#d84e41">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="quiterBtn" buttonType="RAISED" layoutX="79.0" layoutY="94.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Quiter" />
+                  <JFXButton fx:id="traceBtn" buttonType="RAISED" layoutX="201.0" layoutY="94.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Trace" />
+                  <JFXTextField fx:id="result" editable="false" focusColor="#ff7c6c" layoutX="110.0" layoutY="43.0" unFocusColor="#ff7c6c" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</GridPane>

@@ -28,7 +28,7 @@ public  class FilterA extends Filter {
 	}
 
 	@Override
-	synchronized void execute() {
+	protected synchronized void execute() {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);

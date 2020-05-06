@@ -24,7 +24,7 @@ public  class FilterC extends Filter {
 		execute();
 	}
 	@Override
-	synchronized void execute() {
+	protected synchronized void execute() {
 		// TODO Auto-generated method stub
 		String op = getData();
 		System.out.println("operation"+ op );

@@ -13,6 +13,6 @@ public abstract class Filter  implements Runnable{
     public void sendData( String tempData){
         _dataOUTPipe.dataIN(tempData);
     }
-    abstract void execute();
+    protected abstract void execute();
 }
  
