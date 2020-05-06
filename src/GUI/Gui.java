@@ -37,7 +37,7 @@ public class Gui extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gui.fxml"));
         Parent root = (Parent)fxmlLoader.load();
         GuiController controller = fxmlLoader.<GuiController>getController();
-        controller.setGuiController(null,p1);
+        controller.setGuiController(p2,p1);
         primaryStage.setTitle("CMPG");
         primaryStage.setScene(new Scene(root, 371, 298));
         primaryStage.show();

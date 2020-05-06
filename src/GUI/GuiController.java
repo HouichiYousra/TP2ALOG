@@ -84,6 +84,9 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
+            getData();
+            getData();
+            this.result.setText( getData());
         });
 
         sommeBtn.setOnAction(actionEvent -> {
@@ -91,6 +94,9 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
+            getData();
+            getData();
+            this.result.setText( getData());
         });
 
         factorielBtn.setOnAction(actionEvent -> {
@@ -98,6 +104,8 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
+            getData();
+            this.result.setText( getData());
         });
     }
 }
