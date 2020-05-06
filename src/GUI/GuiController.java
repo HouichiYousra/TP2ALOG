@@ -2,6 +2,7 @@ package GUI;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
@@ -76,6 +77,9 @@ public class GuiController extends Filter implements Initializable {
             Stage stage = (Stage) quiterBtn.getScene().getWindow();
             // close it
             stage.close();
+            Platform.exit();
+            System.exit(0);
+
 
         });
 
