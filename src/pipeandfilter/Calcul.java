@@ -1,4 +1,7 @@
 package pipeandfilter;
+
+import Trace.Trace;
+
 public  class Calcul extends Filter {
  
     Pipe _dataINPipe;
@@ -31,8 +34,9 @@ public  class Calcul extends Filter {
 	}
 
 	@Override
-    protected synchronized void execute() {
+	protected synchronized void execute() {
 		// TODO Auto-generated method stub
+		Trace trace = new Trace("fichier.txt");
 		String operation = getData();
 		sendData(operation);
 		switch(operation){
@@ -43,6 +47,7 @@ public  class Calcul extends Filter {
 				sendData(op2);
 				int resultat = Integer.parseInt(op1)+Integer.parseInt(op2);
 				sendData(Integer.toString(resultat));
+				trace.ecrire(Integer.toString(resultat),op1 +"+"+op2);
 				break;
 			case "*":
 				String ope1=getData();
@@ -51,14 +56,17 @@ public  class Calcul extends Filter {
 				sendData(ope2);
 				int res = Integer.parseInt(ope1)*Integer.parseInt(ope2);
 				sendData(Integer.toString(res));
+				trace.ecrire(Integer.toString(res),ope1 +"*"+ope2);
 				break;
 			case "!":
 				String oper1=getData();
 				sendData(oper1);
 				int result = fact(Integer.parseInt(oper1));
 				sendData(Integer.toString(result));
+				trace.ecrire(Integer.toString(result),oper1 +"!");
 				break;
 		}
+
 
 	}
 }
