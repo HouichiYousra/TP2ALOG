@@ -1,10 +1,13 @@
 package GUI;
 
+import Trace.Trace;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import pipeandfilter.Filter;
 import pipeandfilter.Pipe;
@@ -15,8 +18,6 @@ import java.util.ResourceBundle;
 public class GuiController extends Filter implements Initializable {
     @FXML
     private JFXButton produitBtn;
-
-
 
     @FXML
     private JFXButton sommeBtn;
@@ -35,10 +36,14 @@ public class GuiController extends Filter implements Initializable {
     @FXML
     private JFXButton traceBtn;
 
+    @FXML
+    private TextArea tracetxt;
+
     private String operation;
     private String num1;
     private String num2;
 
+    private String trace="";
 
     Pipe _dataINPipe;
     Pipe _dataOUTPipe;
@@ -85,6 +90,7 @@ public class GuiController extends Filter implements Initializable {
             this.num2=nb2.getText();
             execute();
             String resultat2 = getData();
+            trace+= "\n" +resultat2;
             String[] parts = resultat2.split("-");
             this.result.setText( parts[3]);
         });
@@ -95,6 +101,7 @@ public class GuiController extends Filter implements Initializable {
             this.num2=nb2.getText();
             execute();
             String resultat = getData();
+            trace+= "\n" +resultat;
             String[] parts = resultat.split("-");
             System.out.println("resultat");
             this.result.setText( parts[3]);
@@ -106,9 +113,20 @@ public class GuiController extends Filter implements Initializable {
             this.num2=nb2.getText();
             execute();
             String resultat2 = getData();
+            trace+= "\n" +resultat2;
             String[] parts = resultat2.split("-");
             System.out.println("resultat");
             this.result.setText( parts[3]);
         });
+        traceBtn.setOnAction(this::handle);
+    }
+
+    private void handle(ActionEvent actionEvent) {
+        try {
+            this.tracetxt.setText(Trace.lire());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

@@ -6,7 +6,7 @@ import pipeandfilter.Pipe;
 import java.io.*;
 
 public class Trace extends Filter {
-    String nomf;
+
     File fichier ;
     Pipe _dataINPipe;
     Pipe _dataOUTPipe;
@@ -28,18 +28,18 @@ public class Trace extends Filter {
 
 
 
-   /* public String lire ( ) throws IOException {
+    static public String lire ( ) throws IOException {
         // final File fichier =new File(chemin);
-        BufferedReader in = new BufferedReader(new FileReader(this.nomf));
+        BufferedReader in = new BufferedReader(new FileReader("trace.txt"));
         String line;
+        String trace="";
         while ((line = in.readLine()) != null)
         {
-
-            System.out.println (line);
+            trace+="\n" +line;
         }
         in.close();
-        return "";
-    }*/
+        return trace;
+    }
 
     public void ecrire(  String res, String trace)
     { fichier=new File("trace.txt");
@@ -58,10 +58,7 @@ public class Trace extends Filter {
 
     @Override
     protected void execute()  {
-        String trace="";
-        String op1="";
-        String op2="";
-        String resul="";
+
        while (true){
         String op = getData();
         sendData(op);

@@ -1,6 +1,12 @@
-le calcul: 0!
-le resultat:1
-le calcul: 4+1
-le resultat:5
-le calcul: 4*2
-le resultat:8
+le calcul: 6+4
+le resultat:10
+le calcul: 6*4
+le resultat:24
+le calcul: 6!
+le resultat:720
+le calcul: 5+9
+le resultat:14
+le calcul: 5*9
+le resultat:45
+le calcul: 5!
+le resultat:120

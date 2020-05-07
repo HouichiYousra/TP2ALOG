@@ -1,6 +1,8 @@
-package pipeandfilter;
+package Calcul;
 
 import Trace.Trace;
+import pipeandfilter.Filter;
+import pipeandfilter.Pipe;
 
 public  class Calcul extends Filter {
  

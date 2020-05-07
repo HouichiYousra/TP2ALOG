@@ -8,14 +8,15 @@
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GuiController">
    <columnConstraints>
       <ColumnConstraints />
+      <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
    </rowConstraints>
    <children>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="298.0" prefWidth="371.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="369.0">
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="298.0" prefWidth="371.0" GridPane.columnIndex="1">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="369.0">
                <children>
                   <JFXButton fx:id="produitBtn" buttonType="RAISED" layoutX="147.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Produit" />
                   <JFXButton fx:id="sommeBtn" buttonType="RAISED" layoutX="41.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Somme" />
@@ -35,7 +36,7 @@
                         <Font size="19.0" />
                      </font></Label>
                </children></AnchorPane>
-          <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="369.0">
+            <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="369.0">
                <children>
                   <Label layoutX="141.0" prefHeight="33.0" prefWidth="87.0" text="Résultats" textAlignment="CENTER" textFill="#d84e41">
                      <font>
@@ -46,7 +47,17 @@
                   <JFXButton fx:id="traceBtn" buttonType="RAISED" layoutX="201.0" layoutY="94.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" ripplerFill="#ff7c6c" style="-fx-background-color: #FF7C6C;" text="Trace" />
                   <JFXTextField fx:id="result" editable="false" focusColor="#ff7c6c" layoutX="110.0" layoutY="43.0" unFocusColor="#ff7c6c" />
                </children></AnchorPane>
-        </items>
+         </items>
       </SplitPane>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="7.0" layoutY="8.0" prefHeight="33.0" prefWidth="186.0" text="TRACE :" textAlignment="CENTER" textFill="#d84e41">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="tracetxt" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </Pane>
    </children>
 </GridPane>
