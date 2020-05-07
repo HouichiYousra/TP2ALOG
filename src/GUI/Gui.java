@@ -1,5 +1,6 @@
 package GUI;
 
+import Trace.Trace;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +16,7 @@ public class Gui extends Application {
 
 
    static Filter b1 = new Calcul(p1,p2);
-    static Filter c1 = new FilterC(p2,null);
+    static Filter c1 = new Trace(p2,p3);
 
 
     static Thread th2 = new Thread( b1 );
@@ -28,6 +29,7 @@ public class Gui extends Application {
         }).start();
         th2.start();
         th3.start();
+
 
 
     }

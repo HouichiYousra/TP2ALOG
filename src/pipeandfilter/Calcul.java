@@ -1,4 +1,7 @@
 package pipeandfilter;
+
+import Trace.Trace;
+
 public  class Calcul extends Filter {
  
     Pipe _dataINPipe;
@@ -31,29 +34,38 @@ public  class Calcul extends Filter {
 	}
 
 	@Override
-    protected synchronized void execute() {
+	protected synchronized void execute() {
 		// TODO Auto-generated method stub
+
 		while (true){
+
+
+
 		String operation = getData();
 		sendData(operation);
 		switch(operation){
 			case "+":
+				System.out.println("suuum");
 				String op1=getData();
 				sendData(op1);
 				String op2=getData();
 				sendData(op2);
 				int resultat = Integer.parseInt(op1)+Integer.parseInt(op2);
 				sendData(Integer.toString(resultat));
+
 				break;
 			case "*":
+				System.out.println("multii");
 				String ope1=getData();
 				sendData(ope1);
 				String ope2=getData();
 				sendData(ope2);
 				int res = Integer.parseInt(ope1)*Integer.parseInt(ope2);
 				sendData(Integer.toString(res));
+
 				break;
 			case "!":
+				System.out.println("factoo");
 				String oper1=getData();
 				sendData(oper1);
 				int result = fact(Integer.parseInt(oper1));
@@ -61,6 +73,11 @@ public  class Calcul extends Filter {
 				break;
 		}
 
+
 	}}
-}
+
+
+	}
+
+
  

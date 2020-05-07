@@ -1,0 +1,2 @@
+le calcul: *+!
+le resultat:2
