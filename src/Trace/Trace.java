@@ -13,7 +13,7 @@ public class Trace extends Filter {
 
     public Trace(Pipe _dataINPipe, Pipe _dataOUTPipe) {
         super();
-        fichier=new File("trace.txt");
+
         this._dataINPipe = _dataINPipe;
         this._dataOUTPipe = _dataOUTPipe;
     }
@@ -42,7 +42,7 @@ public class Trace extends Filter {
     }*/
 
     public void ecrire(  String res, String trace)
-    {
+    { fichier=new File("trace.txt");
         try {
              FileWriter writer = new FileWriter(fichier,true);
             try {
@@ -64,31 +64,25 @@ public class Trace extends Filter {
         String resul="";
        while (true){
         String op = getData();
+        sendData(op);
         System.out.println("operation in trace"+ op );
-        switch (op){
-            case "!":
+        String[] parts = op.split("-");
 
-                op1=getData();
-                System.out.println("operande1 facto"+op1);
-                resul=getData();
-                System.out.println("resultat"+resul);
-                ecrire(resul, op1 +"!");
+        switch (parts[0]){
+            case "!":
+                ecrire(parts[3], parts[1]+"!");
                 break;
             case "+":
+                ecrire(parts[3], parts[1] +"+"+ parts[2]);
+                break;
             case "*":
-
-                op1=getData();
-                System.out.println("operande1 sum"+op1);
-                op2=getData();
-                System.out.println("operande2 sum mul"+op2);
-                resul=getData();
-                System.out.println("resultat"+resul);
-                ecrire(resul, op1 +"+"+ op2);
+                ecrire(parts[3], parts[1] +"*"+ parts[2]);
                 break;
 
     }
 
-    }}
+    }
+}
 
     @Override
     public void run() {

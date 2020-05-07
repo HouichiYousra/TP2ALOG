@@ -38,38 +38,24 @@ public  class Calcul extends Filter {
 		// TODO Auto-generated method stub
 
 		while (true){
+			String operation = getData();
+			String[] parts = operation.split("-");
 
-
-
-		String operation = getData();
-		sendData(operation);
-		switch(operation){
+		switch(parts[0]){
 			case "+":
 				System.out.println("suuum");
-				String op1=getData();
-				sendData(op1);
-				String op2=getData();
-				sendData(op2);
-				int resultat = Integer.parseInt(op1)+Integer.parseInt(op2);
-				sendData(Integer.toString(resultat));
-
+				int resultat = Integer.parseInt(parts[1])+Integer.parseInt(parts[2]);
+				sendData("+-"+parts[1] +"-"+parts[2]+"-"+Integer.toString(resultat));
 				break;
 			case "*":
 				System.out.println("multii");
-				String ope1=getData();
-				sendData(ope1);
-				String ope2=getData();
-				sendData(ope2);
-				int res = Integer.parseInt(ope1)*Integer.parseInt(ope2);
-				sendData(Integer.toString(res));
-
+				int resultat1 = Integer.parseInt(parts[1])*Integer.parseInt(parts[2]);
+				sendData("*-"+parts[1] +"-"+parts[2]+"-"+Integer.toString(resultat1));
 				break;
 			case "!":
 				System.out.println("factoo");
-				String oper1=getData();
-				sendData(oper1);
-				int result = fact(Integer.parseInt(oper1));
-				sendData(Integer.toString(result));
+				int result = fact(Integer.parseInt(parts[1]));
+				sendData("!-"+parts[1] +"-"+parts[2]+"-"+Integer.toString(result));
 				break;
 		}
 

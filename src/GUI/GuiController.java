@@ -65,9 +65,7 @@ public class GuiController extends Filter implements Initializable {
     }
     @Override
     protected void execute() {
-        _dataOUTPipe.dataIN(operation);
-        _dataOUTPipe.dataIN(num1);
-        _dataOUTPipe.dataIN(num2);
+        _dataOUTPipe.dataIN(operation+"-"+num1+"-"+num2+"-0");
     }
 
     @Override
@@ -86,9 +84,9 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
-            getData();
-            getData();
-            this.result.setText( getData());
+            String resultat2 = getData();
+            String[] parts = resultat2.split("-");
+            this.result.setText( parts[3]);
         });
 
         sommeBtn.setOnAction(actionEvent -> {
@@ -96,9 +94,10 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
-            getData();
-            getData();
-            this.result.setText( getData());
+            String resultat = getData();
+            String[] parts = resultat.split("-");
+            System.out.println("resultat");
+            this.result.setText( parts[3]);
         });
 
         factorielBtn.setOnAction(actionEvent -> {
@@ -106,8 +105,10 @@ public class GuiController extends Filter implements Initializable {
             this.num1=nb1.getText();
             this.num2=nb2.getText();
             execute();
-            getData();
-            this.result.setText( getData());
+            String resultat2 = getData();
+            String[] parts = resultat2.split("-");
+            System.out.println("resultat");
+            this.result.setText( parts[3]);
         });
     }
 }
